@@ -31,10 +31,13 @@ templates.on('index', (function () {
 
         var gain = audioContext.createGain();
         var volumeSlider = templates.hookups['gain'];
-        volumeSlider.value = 100*gain.gain.value;
         volumeSlider.onchange = function () {
-            gain.gain.value = volumeSlider.value / 100;
+            var value = volumeSlider.value * 1;
+            gain.gain.value = value;
+            var textValue = Math.round(value * 1000) / 10 + '%';
+            templates.hookups['volume-level'].innerText = textValue;
         };
+        volumeSlider.onchange();
 
         wireUp([source, gain, audioContext.destination]);
     }

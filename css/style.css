@@ -1,0 +1,161 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    margin: 0;
+}
+
+button {
+    background: white;
+    border: 1px solid black;
+    padding: 0.5em 0.75em;
+    font-family: monospace;
+    box-shadow: 0.15em 0.15em 0 0 #666;
+    position: relative;
+    min-width: 3em;
+    outline-width: 0;
+}
+
+button:disabled {
+    border-color: grey;
+    box-shadow-color: #999;
+}
+
+button:focus {
+    color: white;
+    background-color: grey;
+}
+
+button:focus, button:not(:disabled):hover {
+    text-decoration: underline;
+}
+
+button:not(:disabled):hover {
+    cursor: pointer;
+}
+
+button:disabled:hover {
+    cursor: not-allowed;
+}
+
+button:not(:disabled):active {
+    top: 0.15em;
+    left: 0.15em;
+    box-shadow: none;
+}
+
+label {
+    display: inline-block;
+    min-width: 5em;
+    text-align: right;
+    white-space: nowrap;
+}
+
+input {
+    outline-width: 0;
+}
+
+input[type="range"] {
+    vertical-align: middle;
+    width: 40%;
+    outline-width: 2px;
+}
+
+input[type="text"], input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"] {
+    border: 1px solid lightgrey;
+    padding: 0.4em;
+}
+
+input[type="text"]:focus, input[type="color"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="url"]:focus {
+    border-color: grey;
+}
+
+input.input-sm {
+    width: 5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.relative-container {
+    position: relative;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+table.grid {
+    width: 99%;
+    border-collapse: collapse;
+}
+
+table.grid th.active {
+    background-color: lightgrey;
+}
+
+table.grid td {
+    height: 4em;
+    border: 1px solid grey;
+}
+
+table.grid td.active {
+    background-color: black;
+    color: white;
+}
+
+table.grid td:first-child {
+    color: blue;
+    text-decoration: underline;
+    width: 15%;
+}
+
+.graph {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.handle {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0 double #ddd;
+    cursor: col-resize;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 25%;
+}
+
+.handle.handle-left {
+    left: 0;
+    border-right-width: 0.25em;
+}
+
+.handle.handle-right {
+    right: 0;
+    border-left-width: 0.25em;
+}
